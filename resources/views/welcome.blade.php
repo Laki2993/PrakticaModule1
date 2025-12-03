@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    ascsadca
     <script>
         location.href = '{{ route('register') }}';
     </script>

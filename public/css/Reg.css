@@ -18,8 +18,9 @@ main{
 }
 
 .blockRegForm{
-    width: 350px;
-    height: 560px;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
     border-radius: 5px;
     background: linear-gradient(to bottom, #ff150054, rgba(0, 0, 0, 0.363));
     backdrop-filter: blur(180px);
@@ -77,4 +78,10 @@ main{
     letter-spacing:1px;
     font-weight: lighter;
     font-family:Arial, Helvetica, sans-serif;
+}
+
+.error{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: white;
 }
