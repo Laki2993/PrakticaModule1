@@ -14,7 +14,7 @@
                 <img src="{{ asset('uploads/icondecoration.png') }}" alt="decoration">
                 <h1>Ваша заявка отправлена на обработку</h1>
             </article>
-            <a class="MassageLink" href="#">Вернуться на главную</a>
+            <a class="MassageLink" href="{{ route('dashboard') }}">Вернуться на главную</a>
         </section>
     </main>
 </body>

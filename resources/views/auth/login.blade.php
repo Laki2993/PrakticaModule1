@@ -14,8 +14,8 @@
         <form method="POST" class="blockRegForm" action="{{ route('login') }}">
         @csrf
 
-            <input id="name" class="formInput" type="text" name="name" :value="old('name')" placeholder="имя"  required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('login')"/>
+            <input id="email" class="formInput" type="text" name="email" :value="old('email')" placeholder="email"  required autofocus autocomplete="email" />
+            <x-input-error :messages="$errors->get('name')"/>
 
             <input id="password" class="formInput"  type="password" name="password" placeholder="пароль" required autocomplete="current-password" />
             <x-input-error :messages="$errors->get('password')" class="" />

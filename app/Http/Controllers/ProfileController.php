@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Application; // Добавляем модель
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,8 +17,14 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+        // Получаем заявки пользователя
+        $applications = $request->user()->applications()
+            ->orderBy('created_at', 'desc')
+            ->paginate(5); // 5 заявок на страницу
+        
         return view('profile.edit', [
             'user' => $request->user(),
+            'applications' => $applications // Передаем заявки
         ]);
     }
 

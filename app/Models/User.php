@@ -45,4 +45,36 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Получить все заявки пользователя.
+     */
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
+    }
+
+    /**
+     * Получить только активные заявки.
+     */
+    public function activeApplications()
+    {
+        return $this->applications()->where('status', 'active');
+    }
+
+    /**
+     * Получить заявки на рассмотрении.
+     */
+    public function pendingApplications()
+    {
+        return $this->applications()->whereIn('status', ['new', 'review']);
+    }
+
+    /**
+     * Получить последнюю заявку.
+     */
+    public function latestApplication()
+    {
+        return $this->applications()->latest()->first();
+    }
 }
